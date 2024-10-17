@@ -561,6 +561,7 @@ class CrossEncoder(PushToHubMixin):
                 self.best_score = score
                 if save_best_model:
                     self.save(output_path)
+        return score
 
     def save(self, path: str, *, safe_serialization: bool = True, **kwargs) -> None:
         """
