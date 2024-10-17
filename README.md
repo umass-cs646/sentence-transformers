@@ -26,25 +26,19 @@ For the **full documentation**, see **[www.SBERT.net](https://www.sbert.net)**.
 
 We recommend **Python 3.8+**, **[PyTorch 1.11.0+](https://pytorch.org/get-started/locally/)**, and **[transformers v4.34.0+](https://github.com/huggingface/transformers)**.
 
-**Install with pip**
-
-```
-pip install -U sentence-transformers
-```
-
-**Install with conda**
-
-```
-conda install -c conda-forge sentence-transformers
 ```
 
 **Install from sources**
 
-Alternatively, you can also clone the latest version from the [repository](https://github.com/UKPLab/sentence-transformers) and install it directly from the source code:
+Alternatively, you can also clone the latest version from the [repository](https://github.com/umass-cs646/sentence-transformers.git) and install it directly from the source code:
 
 ````
 pip install -e .
-```` 
+````
+or using this command:
+````
+pip install git+https://github.com/umass-cs646/sentence-transformers.git
+````
 
 **PyTorch with CUDA**
 
