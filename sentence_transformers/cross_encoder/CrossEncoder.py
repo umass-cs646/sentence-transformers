@@ -554,14 +554,14 @@ class CrossEncoder(PushToHubMixin):
     def _eval_during_training(self, evaluator, output_path, save_best_model, epoch, steps, callback) -> None:
         """Runs evaluation during the training"""
         if evaluator is not None:
-            score = evaluator(self, output_path=output_path, epoch=epoch, steps=steps)
+            mrr, ndcg = evaluator(self, output_path=output_path, epoch=epoch, steps=steps)
             if callback is not None:
                 callback(score, epoch, steps)
-            if score > self.best_score:
-                self.best_score = score
+            if mrr > self.best_score:
+                self.best_score = mrr
                 if save_best_model:
                     self.save(output_path)
-        return score
+        return mrr, ndcg
 
     def save(self, path: str, *, safe_serialization: bool = True, **kwargs) -> None:
         """
